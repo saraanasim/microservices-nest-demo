@@ -7,7 +7,11 @@ export class OrdersService {
   constructor(
     private readonly ordersRepository: OrdersRepository
   ) { }
-  createOrder(createOrderDto: CreateOrderDto) {
-    return this.ordersRepository.create(createOrderDto)
+  async createOrder(createOrderDto: CreateOrderDto) {
+    return await this.ordersRepository.create(createOrderDto)
   }
+  async getOrders(){
+    return await this.ordersRepository.find({})
+  }
+
 }

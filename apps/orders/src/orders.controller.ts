@@ -12,4 +12,11 @@ export class OrdersController {
   ) {
     return this.ordersService.createOrder(createOrderDto);
   }
+
+  @Get()
+  getOrders(  ){
+    return this.ordersService.getOrders()
+
+  }
+
 }
